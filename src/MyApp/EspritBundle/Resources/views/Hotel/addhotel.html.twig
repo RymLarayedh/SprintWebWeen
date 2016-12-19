@@ -1,0 +1,86 @@
+
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+<form class="form-horizontal" method="POST">
+    <fieldset>
+       <script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/jquery-3.1.1.js') }}"></script>
+        <script src=" {{ asset('bundles/myappesprit/weenJS/CyTripprogramJS.js')  }}"></script>
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="name">Name</label>
+            <div class="col-md-4">
+                <input id="name" name="name" type="text" placeholder="Hotel" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="stars">stars</label>
+            <div class="col-md-4">
+                <input id="stars" name="stars" type="text" placeholder="stars" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rating">rating</label>
+            <div class="col-md-4">
+                <input id="rating" name="rating" type="text" placeholder="rating" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="latitude">latitude</label>
+            <div class="col-md-4">
+                <input id="latitude" name="latitude" type="text" placeholder="Enter latitude" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="longitude">longitude</label>
+            <div class="col-md-4">
+                <input id="longitude" name="longitude" type="text" placeholder="Enter Longitude" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pricebynight">Price</label>
+            <div class="col-md-4">
+                <input id="pricebynight" name="pricebynight" type="text" placeholder="Enter Price" class="form-control input-md" required="">
+                <span class="help-block">Price/Night</span>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="idaddress">Address</label>
+            <div class="col-md-4">
+
+                <select id="address" name="idaddress">
+
+                </select>
+            </div>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="add"></label>
+            <div class="col-md-4">
+                <button id="add" name="add" class="btn btn-primary">Add Hotel</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+{% endblock %}

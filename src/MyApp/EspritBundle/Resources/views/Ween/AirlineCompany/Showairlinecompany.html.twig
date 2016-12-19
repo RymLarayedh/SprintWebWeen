@@ -1,0 +1,22 @@
+<center><h3>Showing them all</h3>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th colspan="3">Actions</th>
+    </tr>
+
+
+    {% for key,m in airlines %}
+        <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.idaddress.Number }},Street {{ m.idaddress.Street }},{{ m.idaddress.zipcode }},{{ m.idaddress.idcity.name }},{{ m.idaddress.idcountry.name  }}</td>
+            <td><a href="{{ path('my_app_esprit_updateairlineshow',{'idairlinecompany':m.idairlinecompany}) }}">Modifier</a></td>
+            <td><a href="{{ path('my_app_esprit_deleteairline',{'idairlinecompany':m.idairlinecompany}) }}" onclick="return confirm('are u sure to delete {{ m.name }}?')" >Supprimer</a></td>
+            <td><img src="data:image/png;base64,{{ images[key] }}" width="100px"></td>
+        </tr>
+    {% endfor %}
+
+
+
+</table></center>

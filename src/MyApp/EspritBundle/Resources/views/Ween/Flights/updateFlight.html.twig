@@ -1,0 +1,102 @@
+{#<h1> <center > Update Flight </center></h1>
+<form method="POST" action="{{ path('flight_updateFlight',{'id':flight.idFlight}) }}">
+    <table border="1">
+        <tr hidden>
+            <th> id</th>
+            <td>  <input type="text" value="{{ flight.idflight }}" name="id"></td>
+
+        </tr>
+
+        <tr>
+            <th> Nom</th>
+            <td>  <input type="text" value="{{ flight.arrivaldate | date }}" name="arrivaldate"></td>
+
+        </tr>
+
+        <tr>
+            <th> Prenom</th>
+            <td>  <input type="text" value="{{ flight.departuredate | date}}" name="departuredate"></td>
+
+        </tr>
+
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ flight.arrivaltime | date}}" name="arrivaltime"></td>
+
+        </tr>
+
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ flight.departuretime | date}}" name="departuretime"></td>
+
+        </tr>
+
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ flight.idarrivalcity.name}}" name="idarrivalcity"></td>
+
+        </tr>
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ flight.iddeparturecity.name}}" name="iddeparturecity"></td>
+
+        </tr>
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ flight.price}}" name="price"></td>
+
+        </tr>
+
+
+
+    </table>
+
+    <input type="submit" value="Modifier">
+</form>#}
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+<h1>
+
+    Update Flight
+</h1>
+{{ form_start(formes) }}
+<table>
+    <tr>
+        <td> Arrival Date</td>
+        <td> {{ form_widget(formes.arrivaldate) }}</td>
+    </tr>
+    <tr>
+        <td> Departure Date</td>
+        <td> {{ form_widget(formes.departuredate) }}</td>
+    </tr>
+    <tr>
+        <td> Departure Time</td>
+        <td> {{ form_widget(formes.departuretime) }}</td>
+    </tr>
+    <tr>
+        <td> Arrival Time</td>
+        <td> {{ form_widget(formes.arrivaltime) }}</td>
+    </tr>
+    <tr>
+        <td> Arrival City</td>
+        <td> {{ form_widget(formes.idarrivalcity) }}</td>
+    </tr>
+    <tr>
+        <td> Departure City</td>
+        <td> {{ form_widget(formes.iddeparturecity) }}</td>
+    </tr>
+    <tr>
+        <td> Airline Compagny</td>
+        <td> {{ form_widget(formes.idairlinecompany) }}</td>
+    </tr>
+    <tr>
+        <td> Price</td>
+        <td> {{ form_widget(formes.price) }}</td>
+    </tr>
+
+    <tr>
+        <td> {{ form_widget(formes) }}</td>
+    </tr>
+
+</table>
+{% endblock %}

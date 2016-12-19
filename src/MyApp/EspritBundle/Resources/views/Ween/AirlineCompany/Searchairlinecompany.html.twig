@@ -1,0 +1,30 @@
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/jquery-3.1.1.js') }}"></script>
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/Airlinecompanyfind.js') }}"></script>
+<center><form>
+    <table>
+        <tr>
+            <td>Find By :</td>
+            <td><input type="radio" value="Name" id="name" name="choix" onclick="filterairline()">Name<input type="radio" id="city" name="choix" value="City" onclick="filterairline()">City<input type="radio" value="Country"id="country" name="choix" onclick="filterairline()">Country</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="search" placeholder="" onkeyup="filterairline()" id="choixtxt"></td>
+        </tr>
+        </table>
+<br>
+        <table id="tab2" hidden>
+        <tr>
+            <td id="d" hidden>
+                <table border="1" id="d1">
+
+                </table>
+
+            </td>
+
+        </tr>
+    </table>
+        <div id="errors">
+
+        </div>
+</form></center>

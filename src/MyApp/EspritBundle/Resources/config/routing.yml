@@ -1,0 +1,301 @@
+my_app_esprit_homepage:
+    path:     /index
+    defaults: { _controller: MyAppEspritBundle:Default:index }
+
+my_app_esprit_signin:
+    path:     /signin
+    defaults: { _controller: MyAppEspritBundle:Default:signin }
+
+my_app_esprit_signup:
+    path:     /signup
+    defaults: { _controller: MyAppEspritBundle:Default:signup }
+
+my_app_esprit_client:
+    path:     /clinet
+    defaults: { _controller: MyAppEspritBundle:Default:Client }
+
+my_app_esprit_admin:
+    path:     /admine
+    defaults: { _controller: MyAppEspritBundle:Default:Admin }
+ween_display_myfriends:
+    path:     /weenDisplayMyFriends
+    defaults: { _controller: MyAppEspritBundle:Utilisateur:weenDisplayMyFriends }
+ween_display_AllWeeners:
+    path:     /weenDisplayAllWeeners
+    defaults: { _controller: MyAppEspritBundle:Utilisateur:weenDisplayAllWeeners }
+
+
+my_app_esprit_redirect:
+    path:     /dashboard
+    defaults: { _controller: MyAppEspritBundle:Default:dash }
+
+blank_page:
+    path:     /blank_page
+    defaults: { _controller: MyAppEspritBundle:Default:blank_page }
+boxed_page:
+    path:     /boxed_page
+    defaults: { _controller: MyAppEspritBundle:Default:boxed_page }
+sidebar_page:
+    path:     /sidebar_page
+    defaults: { _controller: MyAppEspritBundle:Default:sidebar_page }
+horizontal_page:
+    path:     /horizontal_page
+    defaults: { _controller: MyAppEspritBundle:Default:horizontal_page }
+
+report_table:
+    path:     /report_table
+    defaults: { _controller: MyAppEspritBundle:Default:report_table }
+dispaly_report_table:
+    path:     /display_report_table
+    defaults: { _controller: MyAppEspritBundle:Report:display_report_table }
+ween_report_delete:
+    path:     /deleteReport/{reportid}
+    defaults: { _controller: MyAppEspritBundle:Report:deleteReport }
+ween_report_update:
+    path:     /updateReport/{reportid}
+    defaults: { _controller: MyAppEspritBundle:Report:updateReport }
+ween_report_find:
+    path:     /findReport
+    defaults: { _controller: MyAppEspritBundle:Report:findReport }
+
+ween_report_reportUser:
+    path:     /addReportUser/{id}
+    defaults: { _controller: MyAppEspritBundle:Report:addReportUser }
+ween_friends_find:
+    path:     /findMyFriends
+    defaults: { _controller: MyAppEspritBundle:Friends:findMyFriends }
+ween_friends_finduser:
+    path:     /findUserFriends
+    defaults: { _controller: MyAppEspritBundle:Friends:findUserFriends }
+ween_report_pdf:
+    path:     /reportpdf
+    defaults: { _controller: "MyAppEspritBundle:Report:reportpdf" }
+ween_friend_invitation:
+    path:     /findInvitations
+    defaults: { _controller: MyAppEspritBundle:Friends:findInvitations }
+ween_friend_allinvitation:
+    path:     /findAllInvitations
+    defaults: { _controller: MyAppEspritBundle:Friends:findAllInvitations }
+ween_friend_accept:
+    path:     /acceptFriend/{t}
+    defaults: { _controller: MyAppEspritBundle:Friends:acceptFriend }
+ween_friend_refuse:
+    path:     /refuseFriend/{t}
+    defaults: { _controller: MyAppEspritBundle:Friends:refuseInvitation }
+ween_friend_ween_accept:
+    path:     /weenacceptFriend/{t}
+    defaults: { _controller: MyAppEspritBundle:Friends:weenacceptFriend }
+ween_friend_ween_refuse:
+    path:     /weenrefuseFriend/{idfu}
+    defaults: { _controller: MyAppEspritBundle:Friends:weenrefuseInvitation }
+ween_friend_add:
+    path:     /addFriend/{id}
+    defaults: { _controller: MyAppEspritBundle:Friends:addInvitation }
+ween_friend_delete:
+    path:     /deleteInvitation/{id}
+    defaults: { _controller: MyAppEspritBundle:Friends:deleteInvitation }
+ween_friend_display:
+    path:     /displayWeeners
+    defaults: { _controller: MyAppEspritBundle:Utilisateur:dislayWeeners }
+ween_friend_ween_allinvitation:
+    path:     /weenfindAllInvitations
+    defaults: { _controller: MyAppEspritBundle:Friends:weenfindAllInvitations }
+
+
+# HOTEL
+my_app_esprit_addhotel:
+    path:     /addhotel
+    defaults: { _controller: MyAppEspritBundle:Hotel:AddHotel }
+
+my_app_esprit_displayhotel:
+    path:     /displayhotel
+    defaults: { _controller: MyAppEspritBundle:Hotel:DisplayHotel }
+
+my_app_esprit_deletehotel:
+    path: /deleteHotel/{idhotel}
+    defaults: { _controller: MyAppEspritBundle:Hotel:DeleteHotel }
+
+my_app_esprit_updatehotel:
+    path: /updatehotel/{idhotel}
+    defaults: { _controller: MyAppEspritBundle:Hotel:UpdateHotel }
+
+my_app_esprit_findhotel:
+    path:     /findaddress
+    defaults: { _controller: MyAppEspritBundle:Hotel:findAddress }
+
+
+#CITY
+my_app_esprit_AddCity:
+    path:     /addcity
+    defaults: { _controller: MyAppEspritBundle:City:Ajout}
+my_app_esprit_AfficheCity:
+    path:     /affichecity
+    defaults: { _controller: MyAppEspritBundle:City:affiche}
+my_app_esprit_DeleteCity:
+    path:     /Deletecity/{idcity}
+    defaults: { _controller: MyAppEspritBundle:City:Delete}
+my_app_esprit_UpdateCity:
+    path:     /Updatecity/{idcity}
+    defaults: { _controller: MyAppEspritBundle:City:Update}
+City_Search:
+    path: /Search
+    defaults: { _controller:  MyAppEspritBundle:City:Search}
+
+
+#FLIGHT
+my_app_esprit_displayFlight:
+    path:     /displayFlight
+    defaults: { _controller: MyAppEspritBundle:Flight:displayFlight }
+my_app_esprit_getFlightInfo:
+    path:     /getFlightInfo{id}
+    defaults: { _controller: MyAppEspritBundle:Flight:getFlightInfo }
+my_app_esprit_updateFlight:
+    path:     /updateFlight{id}
+    defaults: { _controller: MyAppEspritBundle:Flight:updateFlight }
+my_app_esprit_deleteFlight:
+    path:     /deleteFlight{id}
+    defaults: { _controller: MyAppEspritBundle:Flight:deleteFlight }
+my_app_esprit_addFlight:
+    path:     /addFlight
+    defaults: { _controller: MyAppEspritBundle:Flight:addFlight }
+my_app_esprit_findairline:
+    path:     /findairline
+    defaults: { _controller: MyAppEspritBundle:Flight:findairline}
+
+#TRIP PROGRAM
+my_app_esprit_addTripProgram:
+    path:     /addTripProgram
+    defaults: { _controller: MyAppEspritBundle:TripProgram:addTripProgram }
+my_app_esprit_showaddTripProgram:
+    path:     /showaddTripProgram
+    defaults: { _controller: MyAppEspritBundle:TripProgram:showaddTripProgram }
+my_app_esprit_findCountries:
+    path:     /findCountries
+    defaults: { _controller: MyAppEspritBundle:TripProgram:findCountries }
+my_app_esprit_findCities:
+    path:     /findCities/{id}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:findCities }
+my_app_esprit_showFlightTable:
+    path:     /showFlightTable/{city}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:showFlightTable }
+my_app_esprit_displayTripProgram:
+    path:     /displayTripProgram
+    defaults: { _controller: MyAppEspritBundle:TripProgram:displayTripProgram }
+my_app_esprit_updateTripProgram:
+    path:     /updateTripProgram/{id}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:updateTripProgram }
+my_app_esprit_updateTripProgram2:
+    path:     /updateTripProgram2/{id}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:updateTripProgram2 }
+my_app_esprit_deleteTripProgram:
+    path:     /deleteTripProgram/{id}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:deleteTripProgram }
+my_app_esprit_sortByPriceTripProgram:
+    path:     /sortByPriceTripProgram
+    defaults: { _controller: MyAppEspritBundle:TripProgram:findPrice }
+my_app_esprit_showHotelTable:
+    path:     /showHotelTable/{city}
+    defaults: { _controller: MyAppEspritBundle:TripProgram:showHotelTable }
+
+
+
+#AIRLINE
+my_app_esprit_Airlinemgmt:
+    path:     /airline
+    defaults: { _controller: MyAppEspritBundle:Default:Airlinemgt }
+my_app_esprit_ajouterAirline:
+    path:     /airlineadd
+    defaults: { _controller: MyAppEspritBundle:Default:ToAjouterAirline }
+my_app_esprit_affallpay:
+    path:     /scriptCountry
+    defaults: { _controller: MyAppEspritBundle:Default:AllCountriesSh }
+my_app_esprit_affallcity:
+    path:     /scriptCity/{id}
+    defaults: { _controller: MyAppEspritBundle:Default:CitySh }
+my_app_esprit_addairline:
+    path:     /addairline
+    defaults: { _controller: MyAppEspritBundle:Default:AjouterAirline }
+my_app_esprit_showallairline:
+    path:     /showairline
+    defaults: { _controller: MyAppEspritBundle:Default:ShowAirline }
+my_app_esprit_deleteairline:
+    path:     /deleteairline/{idairlinecompany}
+    defaults: { _controller: MyAppEspritBundle:Default:DeleteAirline }
+my_app_esprit_updateairlineshow:
+    path:     /UpdateAirlineShow/{idairlinecompany}
+    defaults: { _controller: MyAppEspritBundle:Default:UpdateAirlineShow }
+my_app_esprit_updateairline:
+    path:     /UpdateAirline/{Id}
+    defaults: { _controller: MyAppEspritBundle:Default:UpdateAirline }
+my_app_esprit_search:
+    path:     /Find
+    defaults: { _controller: MyAppEspritBundle:Default:FindAirline }
+my_app_esprit_filter:
+    path: /filter/{choix}
+    defaults: { _controller: MyAppEspritBundle:Default:Filter}
+
+#TRIP PROGRAM USER INTERFACE
+
+my_app_esprit_userTripInterface:
+    path:     /userTripInterface
+    defaults: { _controller: MyAppEspritBundle:TripProgram:userTripInterface }
+
+my_app_esprit_test:
+    path:     /test
+    defaults: { _controller: MyAppEspritBundle:TripProgram:test }
+my_app_esprit_tripprogram:
+    path:     /tripprogram
+    defaults: { _controller: MyAppEspritBundle:TripProgram:tripprogram }
+my_app_esprit_searchtrip:
+    path:     /searchtrip
+    defaults: { _controller: MyAppEspritBundle:TripProgram:searchtrip}
+my_app_esprit_searchtripprice:
+    path:     /searchtripprice
+    defaults: { _controller: MyAppEspritBundle:TripProgram:searchtripprice}
+my_app_esprit_testuser:
+    path:     /testuser
+    defaults: { _controller: MyAppEspritBundle:TripProgram:testuser}
+my_app_esprit_testvideo:
+    path:     /testvideo
+    defaults: { _controller: MyAppEspritBundle:TripProgram:testvideo}
+
+ween_Fidelite_minuteur:
+    path:     /minuteur
+    defaults: { _controller: MyAppEspritBundle:Fidelite:minuteur }
+ween_TripProgram_minuteur:
+    path:     /go
+    defaults: { _controller: MyAppEspritBundle:Fidelite:go }
+
+my_app_esprit_fidelite_add:
+    path:     /addFidelite
+    defaults: { _controller: MyAppEspritBundle:Fidelite:addFidelite }
+my_app_esprit_fidelite_display:
+    path:     /displayFidelite
+    defaults: { _controller: MyAppEspritBundle:Fidelite:displayFidelite }
+
+
+ween_profile_user:
+    path:     /profileUser/{friendid}
+    defaults: { _controller: MyAppEspritBundle:Utilisateur:profileUser }
+
+
+my_app_esprit_ptrip:
+    path: /personnalizedtrip
+    defaults: { _controller: MyAppEspritBundle:PersonnalizedTrip:addPersoTrip }
+my_app_esprit_addpersotrip:
+    path: /addpersotrip
+    defaults: { _controller: MyAppEspritBundle:PersonnalizedTrip:addPersoTrip }
+
+
+my_app_esprit_findHotels:
+    path:     /findhotel
+    defaults: { _controller: MyAppEspritBundle:PersonnalizedTrip:findHotels }
+
+
+my_app_mail_newmail:
+    path: /newmail
+    defaults: { _controller: MyAppMailBundle:Mail:new }
+
+
+
+

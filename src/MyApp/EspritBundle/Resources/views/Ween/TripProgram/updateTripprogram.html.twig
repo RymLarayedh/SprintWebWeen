@@ -1,0 +1,108 @@
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+    <script src=" {{ asset('bundles/myappesprit/weenJS/jquery-3.1.1.js') }}"></script>
+    <script src=" {{ asset('bundles/myappesprit/weenJS/TripprogramJS.js')  }}"></script>
+<h1> <center > Update Trip </center></h1>
+
+<form method="POST" action="{{ path('my_app_esprit_updateTripProgram2',{'id':trip.idtripprogram}) }}">
+   {# <table>
+       <tr hidden>
+            <th> Reference</th>
+            <td>  <input type="text" value="{{ e.reference }}" name="reference"></td>
+
+        </tr>
+
+        <tr>
+            <th> Nom</th>
+            <td>  <input type="text" value="{{ e.nom }}" name="nom"></td>
+
+        </tr>
+
+        <tr>
+            <th> Prenom</th>
+            <td>  <input type="text" value="{{ e.prenom }}" name="prenom"></td>
+
+        </tr>
+
+        <tr>
+            <th> Classe </th>
+            <td>  <input type="text" value="{{ e.classe }}" name="classe"></td>
+
+        </tr>
+
+
+
+    </table>#}
+
+    <table>
+
+        <tr>
+            <td>Country</td>
+            <td>:
+                <select id="countryu"  name="countryu" onchange="getCountryU()" required disabled>
+                    <option>{{ trip.idcity.idcountry.name }}</option>
+
+                </select>
+            </td>
+        </tr>
+
+        <tr id="cityselectu"  >
+            <td>City</td>
+            <td>:
+                <select id="cityu"  name="cityu" onchange="getCityU()"required disabled>
+                    <option>{{ trip.idcity.name }}</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Want to modify the Destination ?</td>
+            <td> <input type="radio" onclick="updateDest()"></td>
+        </tr>
+
+
+
+        <tr id="flighttable" hidden>
+            <td>Flight</td>
+            <td>
+                <table id="table" border="1" >
+
+
+
+                </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td> Description</td>
+            <td>:
+                <textarea rows="4" cols="50" name="description" value="{{ trip.description }}"> </textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Number Passenger</td>
+            <td>: <input type="text" name="nbrPassenger" value="{{ trip.nbrpassenger }}"></td>
+        </tr>
+        <tr>
+            <td> Price</td>
+            <td>: <input type="text" name="price" value="{{ trip.price }}"></td>
+        </tr>
+        <tr   >
+            <td>Want to modify the Flight of this Trip ?</td>
+            <table>
+                <tr>yes <input type="radio" name="c" value="yes" onclick="updateVoyage()"></tr>
+                <tr>No <input type="radio" name="c" value="no"></tr>
+            </table>
+        </tr>
+
+
+
+
+
+    </table>
+
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

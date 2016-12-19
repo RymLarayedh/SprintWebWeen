@@ -1,0 +1,66 @@
+{% extends 'MyAppEspritBundle:views/Security:testtemplateuser.html.twig' %}
+{% block formulaire %}
+    <script src=" {{ asset('bundles/myappesprit/weenJS/jquery-3.1.1.js') }}"></script>
+    <script src=" {{ asset('bundles/myappesprit/weenJS/TripprogramJS.js')  }}"></script>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <form method="POST" action="{{ path('my_app_esprit_searchtrip')}}">
+        Enter City <input type="text" name="name">
+        <input type="submit" value="filter destination" > <br> <br> <br>
+    </form>
+
+    <form method="POST" action="{{ path('my_app_esprit_searchtripprice')}}">
+
+        Enter Budget <input type="text" name="name2">
+        <input type="submit" value="filter Price " > <br> <br> <br>
+    </form>
+
+
+
+
+
+
+    <center>
+        <table border="1">
+            {%for key , t in trip %}
+            <tr>
+                <td>
+
+                    <div class="media col-sm-12 col-lg-12 col-md-12 col-xs-12 item-result miu-result miu-birmanie  miu-we miu-escapade miu-prix-2000"
+                         data-miu-prix="175" style="display: inline-block;" data-bound="">
+                        <div class="media-left col-sm-4 col-lg-4 col-md-4 col-xs-12">
+                            <br>
+
+                            <img src="data:image/png;base64,{{ images[key] }}" width="300px" alt="Découverte de ..">
+
+
+                        </div>
+                        <div class="content-right col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                            <div class="duree">Hotel : </div>
+                            <div class="apartirde"><b>Price</b><br><span class="prix">{{ t.price}}</span></div>
+
+                            <div class="pays"><h3> Country</h3><I>{{ t.idcity.idcountry.name  }}</I></div>
+                            <div class="type"><h4> <I>City</I></h4>{{ t.idcity.name}}</div> <br>
+                            <div class="description">
+                                <p>{{ t.description}} </p></div>
+                            <div class="title title-inps">
+                                <a href="nos-destinations/asie/birmanie/decouverte-de-pindaya.html">Discover more this destination</a>
+                            </div>
+                            <div class="divbtn">
+                                <a class="btn btn-success" href="nos-destinations/asie/birmanie/decouverte-de-pindaya.html">Book</a>
+                            </div> <br>
+                            <div class="divbtn">
+                                <input type="button" id="btnlike" class="btn btn-success" href="" onclick="like()" value="Like"> </input>
+                            </div>
+                        </div>
+                    </div>
+                    {%  endfor %}
+                </td>
+            </tr>
+        </table>
+    </center>
+
+{% endblock %}

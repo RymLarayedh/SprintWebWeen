@@ -1,0 +1,250 @@
+{#{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+<h1> Add Flight </h1>
+{{ form (formes) }}
+{{ form_errors(formes) }}
+{% endblock %}#}
+
+{#/************************** new *******************#}
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+    <script src=" {{ asset('bundles/myappesprit/weenJS/jquery-3.1.1.js') }}"></script>
+    <script src=" {{ asset('bundles/myappesprit/weenJS/FlightJS.js')  }}"></script>
+    <script src=" {{ asset('bundles/myappesprit/weenJS/FlightJS2.js')  }}"></script>
+
+    <!-- page heading start-->
+    <div class="page-heading">
+        <h3>
+            Reports Table
+        </h3>
+        <ul class="breadcrumb">
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Manage</a>
+            </li>
+            <li > Flight </li>
+            <li class="active"> New Flight </li>
+        </ul>
+    </div>
+    <!-- page heading end-->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Flights Table
+                        <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                    </header>
+
+
+
+
+                    <!--           Formulaire      -->
+
+
+                    <form method="POST" action="{{ path('my_app_esprit_addFlight') }}">
+                        {{ socialButtons() }}
+                        <table>
+
+                            <tr>
+                                <td class="control-label col-md-3">Arrival Date</td>
+                                <td class="col-md-4 col-xs-11">
+                                    <input class="form-control form-control-inline input-medium default-date-picker"   name="arrivaldate" size="16" type="text" />
+
+                                </td>
+
+
+                                <td class="control-label col-md-3">Departure Date</td>
+                                <td class="col-md-4 col-xs-11">
+                                    <input class="form-control form-control-inline input-medium default-date-picker"   name="d" size="16" type="text"  />
+
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td class="control-label col-md-4">Arrival Time</td>
+                                <td class="col-md-6">
+                                    <div class="input-group bootstrap-timepicker">
+                                        <input type="text" class="form-control timepicker-default" name="arrivaltime">
+                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>
+                                                            </span>
+                                    </div>
+                                </td>
+
+
+
+                                <td class="control-label col-md-4">Departure Time</td>
+                                <td class="col-md-6">
+                                    <div class="input-group bootstrap-timepicker">
+                                        <input type="text" class="form-control timepicker-default">
+                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>
+                                                            </span>
+                                    </div>
+                                </td>
+                            </tr>
+
+<table>
+    <tr>
+
+                                <td>Arrival Country</td>
+                                <td>:
+                                    <select id="country" onchange="getCountry()" name="country" required>
+
+                                    </select>
+                                </td>
+
+
+
+                             <td>Departure Country</td>
+                               <td>:
+                              <select id="country2" onchange="getCountry2()" name="country2" required>
+
+                             </select>
+                            </td>
+
+    </tr>
+    <tr>
+
+
+                                <td> Arrival City</td>
+                                <td>:
+                                    <select id="arrivalcity" onchange="getCity()" name="city" required></select>
+
+                                </td>
+
+
+        <td> Departure City</td>
+        <td>:
+            <select id="arrivalcity2" onchange="getCity2()" name="city2" required></select>
+
+        </td>
+
+    </tr>
+</table>
+
+
+                            <tr id="airlinecompagny">
+                                <td> Ariline Compagny</td>
+                                <td>:
+                                    <select id="airline" onchange="getAirline()" name="airline" required></select>
+
+                                </td>
+
+                            </tr>
+
+
+
+
+
+
+
+{#****************************************************************************#}
+                           {#     <label class="control-label col-md-3">Default Datepicker</label>
+                                <div class="col-md-4 col-xs-11">
+                                    <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                    <span class="help-block">Select date</span>
+                                </div>
+
+                                    <tr class="col-md-4 col-xs-11">
+                                <td class="control-label col-md-3"> Default Datepicker </td>
+                                    <td class="input-group date form_datetime-component">
+                                        <input type="text" class="form-control" readonly="" size="16">
+                                        <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-primary date-set"><i class="fa fa-calendar"></i></button>
+                                                            </span>
+                                    </td>
+
+
+                            </tr>#}
+  {#****************************************************************************#}
+
+
+                            <tr>
+
+                                <td> <input class="btn btn-primary" type="submit" name="Add"></td>
+                            </tr>
+
+
+
+                        </table>
+
+                    </form>
+
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <!--sidebar nav start-->
+    <ul class="nav nav-pills nav-stacked custom-nav">
+        <li class="menu-list"><a href="{{ path('my_app_esprit_redirect') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+            <ul class="sub-menu-list">
+                <li ><a href="{{ path('my_app_esprit_redirect') }}"> Dashboard </a></li>
+            </ul>
+        </li>
+
+        <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Layouts</span></a>
+            <ul class="sub-menu-list">
+                <li><a href={{ path('blank_page') }}> Blank Page</a></li>
+                <li><a href={{ path('boxed_page') }}> Boxed Page</a></li>
+                <li><a href={{ path('sidebar_page') }}> Sidebar Collapsed</a></li>
+                <li><a href={{ path('horizontal_page') }}> Horizontal Menu</a></li>
+
+            </ul>
+        </li>
+        <li class="menu-list nav-active"><a href=""><i class="fa fa-book"></i> <span>Manage</span></a>
+            <ul class="sub-menu-list">
+                <li ><a href={{ path('ween_friend_display') }}> User</a></li>
+                <li class="active"><a href={{ path('my_app_esprit_displayTripProgram') }}> Trip Program </a></li>
+                <li><a href={{ path('my_app_esprit_displayhotel') }}> Hotel</a></li>
+                <li><a href={{ path('my_app_esprit_displayFlight') }}> Flight</a></li>
+                <li ><a href={{ path('my_app_esprit_AfficheCity') }}> City</a></li>
+                <li><a href={{ path('my_app_esprit_showallairline') }}> Airline Company</a></li>
+            </ul>
+        </li>
+        <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Operations</span></a>
+            <ul class="sub-menu-list">
+                <li ><a href={{ path('ween_friend_allinvitation') }}> Invitation Request </a></li>
+                <li><a href="#"> Reservation Request</a></li>
+                <li ><a href={{ path('dispaly_report_table') }}> Report Request </a></li>
+            </ul>
+        </li>
+
+        <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span>Statistics</span></a>
+            <ul class="sub-menu-list">
+                <li><a href="#"> Weeners </a></li>
+                <li><a href="#"> Trip Programs </a></li>
+            </ul>
+        </li>
+
+        <li><a href="#"><i class="fa fa-bullhorn"></i> <span>Settings</span></a></li>
+
+
+
+
+
+
+        <li><a href={{ path('my_app_esprit_homepage') }}><i class="fa fa-sign-in"></i> <span>Visit Ween</span></a></li>
+
+    </ul>
+    <!--sidebar nav end-->
+
+
+{% endblock %}
+{#/************************** new *******************#}
+
+
+
+
+
+

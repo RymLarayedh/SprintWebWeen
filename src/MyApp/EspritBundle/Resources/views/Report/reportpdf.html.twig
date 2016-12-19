@@ -1,0 +1,30 @@
+
+<h1 align="center">Report List</h1>
+
+<div class="panel-body" style="margin-left: 20%;" >
+    <div class="table-responsive" >
+        <table align="center" class="table table-striped table-bordered table-hover"   border="2" style="border-radius: 5%;" style="margin-left: 20%;">
+            <tbody>
+            <tr>
+                <th>Report ID</th>
+                <th>User</th>
+                <th>Reported User</th>
+                <th>Reported Trip</th>
+            </tr>
+            </tbody>
+            <tbody>
+            {% for entity in entitys %}
+            <tr>
+                <td style="color:red;">{{ entity.reportid  }} </td>
+                <td style="color:red;">{{ entity.userid.username  }} </td>
+                <td style="color:red;">{{ entity.reporteduid.username  }} </td>
+                <td style="color:red;">{{ entity.reportedtid.idtripprogram  }} </td>
+
+
+                        </tr>
+                {% endfor %}
+                        </tbody>
+                        </table>
+                        </div>
+                        </div>
+

@@ -1,0 +1,48 @@
+{% extends "MyAppEspritBundle:views:layout2.html.twig" %}
+
+{% block hey %}
+    <script src="{{ asset('bundles/myappesprit/weenJS/RymTripprogramJS.js') }}"></script>
+    <center>
+
+<table>
+        <tr>
+
+            <td>
+                <div class="input-group">
+
+
+                    <select id="country" name="destination" required="required" class="select form-control">
+                        <option value="" selected="selected">Country</option>
+                    </select>
+
+                </div>
+            </td>
+        </tr>
+</table>
+
+    </center>
+{% endblock %}
+
+
+
+    {% block hotel %}
+
+
+<div class="input-group">
+
+
+<script src="{{ asset('bundles/myappesprit/weenJS/RymTripprogramJS.js') }}"></script>
+
+<select id="form_accommodation" name="accommodation"  required="required" class="select form-control">
+               <option value="" selected="selected">Hotels</option>
+
+
+</select>
+</div>
+    {% endblock %}
+
+
+
+
+
+

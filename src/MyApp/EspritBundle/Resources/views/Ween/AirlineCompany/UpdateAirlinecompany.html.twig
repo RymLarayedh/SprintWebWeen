@@ -1,0 +1,44 @@
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/jquery-3.1.1.js') }}"></script>
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/Airlinecompanyupdate.js') }}"></script>
+<h3>Updating <i><u>{{ airlines.name }} :</u></i> </h3>
+<div hidden><input type="text"value="{{ airlines.idaddress.idcountry.idcountry }}" id="coutid" ><input type="text"value="{{ airlines.idaddress.idcity.idcity }}" id="citid"></div>
+<form method="post" action="{{ path('my_app_esprit_updateairline',{'Id':airlines.idairlinecompany}) }}">
+    <table>
+        <tr>
+            <td>Name </td>
+            <td>: <input type="text" name="nname" value="{{ airlines.name }}" required></td>
+        </tr>
+
+        <tr>
+            <td>Number </td>
+            <td>: <input type="text" name="nnumber" value="{{ airlines.idaddress.Number }}"required></td>
+        </tr>
+
+        <tr>
+            <td>Street </td>
+            <td>: <input type="text" name="nstr" value="{{ airlines.idaddress.Street }}"required></td>
+        </tr>
+
+        <tr>
+            <td>Zipcode </td>
+            <td>: <input type="text" name="nzip" value="{{ airlines.idaddress.zipcode }}"required></td>
+        </tr>
+
+
+        <tr>
+            <td>City </td>
+            <td>: <select hidden id="city" name="cityval"><option></option></select> <input type="text"value="{{ airlines.idaddress.idcity.name }}" id="citytext" disabled> <span id="txtcity">Check this to change this value</span><input type="checkbox" id="r1" name="ct" onclick="show()"></td>
+        </tr>
+
+        <tr>
+            <td>Country </td>
+            <td>:<select hidden id="country" name="countryval" onchange="coch()"><option></option></select> <input type="text" value="{{ airlines.idaddress.idcountry.name }}" id="countrytext" disabled> <span id="txtcountry">Check this to change this value</span><input type="checkbox" id="r2" name="co" onclick="allcountry()"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update {{ airlines.name }}" ></td>
+        </tr>
+
+    </table>
+</form>

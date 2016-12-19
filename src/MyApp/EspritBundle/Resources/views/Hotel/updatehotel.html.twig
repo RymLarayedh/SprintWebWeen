@@ -1,0 +1,43 @@
+
+
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+            <center>
+
+<h1>Update Hotel</h1>
+
+{{ form_start (formes)}}
+<table>
+    <tr>
+        <td>name</td>
+        <td>{{ form_widget(formes.name) }}</td>
+
+    </tr>
+    <tr>
+        <td>stars</td>
+        <td>{{ form_widget(formes.stars) }}</td>
+    </tr>
+    <tr>
+        <td>rating</td>
+        <td>{{ form_widget(formes.rating) }}</td>
+    </tr>
+    <tr>
+        <td>longitude</td>
+        <td>{{ form_widget(formes.longitude) }}</td>
+    </tr>
+    <tr>
+        <td>latitude</td>
+        <td>{{ form_widget(formes.latitude) }}</td>
+    </tr>
+    <tr>
+        <td>pricebynight</td>
+        <td>{{ form_widget(formes.pricebynight) }}</td>
+    </tr>
+
+    <tr>
+        <td>{{ form_widget(formes.ajouter) }}</td>
+    </tr>
+</table>
+{{ form_end(formes) }}
+    </center>
+{% endblock %}

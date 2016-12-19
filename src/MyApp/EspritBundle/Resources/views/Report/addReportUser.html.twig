@@ -1,0 +1,34 @@
+<h1> Report </h1>
+{{ form_start(formes) }}
+<table>
+    <tr>
+        <td>User id</td>
+        <td>{{ form_widget(formes.userid) }}</td>
+    </tr>
+
+    <tr>
+       <td colspan="2"> *****</td>
+    </tr>
+
+
+
+    <tr>
+        <td>Reported trip</td>
+        <td>{{ form_widget(formes.reportedtid) }}</td>
+    </tr>
+
+    <tr>
+        <td>Reported User</td>
+        <td>{{ form_widget(formes.reporteduid) }}</td>
+    </tr>
+
+
+
+    <tr>
+
+        <td>{{ form_widget(formes.report) }}</td>
+    </tr>
+
+</table>
+
+{{ form_end(formes) }}

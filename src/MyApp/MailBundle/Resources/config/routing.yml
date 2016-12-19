@@ -1,0 +1,12 @@
+my_app_mail_newm:
+    path:     /newm
+    defaults: { _controller: MyAppMailBundle:Default:index }
+
+
+my_app_mail_accusm:
+    path: /succesm
+    defaults: { _controller: MyAppMailBundle:Default:succes }
+
+my_app_mail_mail2:
+    path: /mail2
+    defaults: { _controller: MyAppMailBundle:Mail2:index }

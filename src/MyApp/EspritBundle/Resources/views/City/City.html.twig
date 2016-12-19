@@ -1,0 +1,28 @@
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+<h1>
+
+    Ajout City
+</h1>
+
+{{ form_start(formes) }}
+<table>
+    <tr>
+        <td>City</td>
+        <td> {{ form_widget(formes.Name) }}</td>
+    </tr>
+    <tr>
+
+        <td> Country </td>
+        <td> {{ form_widget(formes.idcountry) }}</td>
+    </tr>
+    <tr>
+
+
+        <td> {{ form_widget(formes) }}</td>
+    </tr>
+
+</table>
+{% endblock %}
+
+

@@ -1,0 +1,66 @@
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/jquery-3.1.1.js') }}"></script>
+<script src="{{ asset('bundles/myappesprit/Ween/Airlinecompany/AJAX/Airlinecompanyadd.js') }}"></script>
+<script>
+    {% for flashMessage in app.session.flashbag.get('errors') %}
+
+    alert("{{ flashMessage }}");
+
+            {% endfor %}
+
+</script>
+<h1>Adding new Airlinecompany</h1>
+<audio controls autoplay hidden>
+    <source src="{{ asset('bundles/myappesprit/Babylone -zina.mp3') }}" type="audio/mpeg">
+</audio>
+
+
+<form method="post" action="{{ path('my_app_esprit_addairline') }}">
+    <table>
+
+        <tr>
+            <td>Name </td>
+            <td>: <input type="text" name="nom" required></td>
+        </tr>
+
+
+        <tr>
+            <td>Number </td>
+            <td>: <input type="text" name="adnum" required></td>
+        </tr>
+
+
+        <tr>
+            <td>Street</td>
+            <td>: <input type="text" name="adstr" required></td>
+        </tr>
+
+
+        <tr>
+            <td>ZipCode</td>
+            <td>: <input type="text" name="adzip" required></td>
+        </tr>
+
+        <tr>
+            <td>Country</td>
+            <td>: <select id="c" onchange="setCity()"name="adcountry" required>
+                </select></td>
+        </tr>
+
+        <tr id="c1" hidden>
+            <td>City</td>
+            <td>: <select id="city" name="adcity" required>
+                </select></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="file" name="fle"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Airline" id="btnadd"></td>
+        </tr>
+
+    </table>
+</form>

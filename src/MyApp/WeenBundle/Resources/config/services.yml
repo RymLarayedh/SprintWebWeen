@@ -1,0 +1,4 @@
+services:
+#    my_app_ween.example:
+#        class: MyApp\WeenBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

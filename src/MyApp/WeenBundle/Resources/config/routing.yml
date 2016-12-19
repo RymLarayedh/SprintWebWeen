@@ -1,0 +1,15 @@
+my_app_ween_homepage:
+    path:     /
+    defaults: { _controller: MyAppWeenBundle:Default:index }
+
+my_app_ween_allweeners:
+    path:     /Admin/allweeners
+    defaults: { _controller: MyAppWeenBundle:Admin:ShowAllWeeners }
+
+my_app_ween_blockweener:
+    path:     /Admin/blockweener/{id}
+    defaults: { _controller: MyAppWeenBundle:Admin:Block }
+
+my_app_ween_unblockweener:
+    path:     /Admin/unblockweener/{id}
+    defaults: { _controller: MyAppWeenBundle:Admin:UnBlock }

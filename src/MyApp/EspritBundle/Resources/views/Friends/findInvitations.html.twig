@@ -1,0 +1,94 @@
+{% extends '@MyAppEsprit/views/templatevide.html.twig' %}
+{% block invitation %}
+
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/html5shiv.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/respond.min.js') }}"></script>
+
+    <li>
+        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+            <i class="fa fa-tasks"></i>
+
+            <span class="badge">{{ nbr }}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-head pull-right">
+
+
+            <h5 class="title">You have {{ nbr }} Invitations</h5>
+            <ul class="dropdown-list user-list">
+                {% for f in friends %}
+
+                <li class="new">
+                    <a href="#">
+                        <div >
+
+                                <div class="panel-body">
+                                    <div class="dir-info">
+                                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="avatar">
+                                    <img src="{{ asset('bundles/myappesprit/AdminTemplate/images/photos/rym.png') }}" alt=""/>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <h5>{{ f.userid.username }} {{ f.idfu }}</h5>
+
+                            </div><br><br>
+
+                            <input class="btn btn-warning" type="submit" value="Accept">
+                            <input class="btn btn-info" type="submit" value="Refuse">
+
+
+                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </a>
+                </li>
+                    {% endfor %}
+
+
+
+
+                <li class="new"><a href="">See All Pending Invitations</a></li>
+            </ul>
+
+        </div>
+    </li>
+
+
+
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/ion.rangeSlider-1.8.2/js/vendor/jquery-1.10.2.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery-ui-1.9.2.custom.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/modernizr.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery.nicescroll.js') }}"></script>
+
+    <!--data table-->
+    <script type="text/javascript" src="{{ asset('bundles/myappesprit/AdminTemplate/js/advanced-datatable/js/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript" src="../public/AdminTemplate/js/data-tables/DT_bootstrap.js"></script>
+
+    <!--common scripts for all pages-->
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/scripts.js') }}"></script>
+
+    <!--script for editable table-->
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/editable-table.js') }}"></script>
+
+    <!-- END JAVASCRIPTS -->
+    <script>
+        jQuery(document).ready(function() {
+            EditableTable.init();
+        });
+    </script>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

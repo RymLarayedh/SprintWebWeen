@@ -1,0 +1,32 @@
+
+<form method="POST">
+
+    user id
+    <input type="text" name="userid">
+   <input type="submit" value="find">
+
+
+
+    <table border="1">
+        <tr>
+            <td>idfu</td>
+            <td>userid </td>
+            <td>friend id</td>
+            <td>status</td>
+        </tr>
+
+
+        {% for m in friends %}
+            <tr>
+                <td>{{ m.idfu }}</td>
+                <td>{{ m.userid.username }}</td>
+                <td>{{ m.friendid.nom }}</td>
+                <td>{{ m.status }}</td>
+
+            </tr>
+        {% endfor %}
+
+
+
+    </table>
+</form>

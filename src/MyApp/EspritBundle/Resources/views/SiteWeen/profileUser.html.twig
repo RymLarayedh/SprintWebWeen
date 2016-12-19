@@ -1,0 +1,188 @@
+{% extends '@MyAppEsprit/views/templatevide.html.twig' %}
+{% block liste %}
+    {% for i in friend %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="ThemeBucket">
+        <link rel="shortcut icon" href="#" type="image/png">
+
+        <title>Profile</title>
+
+        <link href="{{ asset('bundles/myappesprit/AdminTemplate/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myappesprit/AdminTemplate/css/style-responsive.css') }}" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/html5shiv.js') }}"></script>
+        <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/respond.min.js') }}"></script>
+        <![endif]-->
+    </head>
+
+    <body class="sticky-header">
+
+    <section>
+
+        <!-- main content start-->
+        <div >
+
+
+
+            <!-- page heading start-->
+            <!--<div class="page-heading">-->
+            <!--Page Tittle goes here-->
+            <!--</div>-->
+            <!-- page heading end-->
+
+            <!--body wrapper start-->
+            <div class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="profile-pic text-center">
+                                            <img alt="" src="{{ asset('bundles/myappesprit/AdminTemplate/images/photos/rym.png') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <ul class="p-info">
+                                            <li>
+                                                <div class="title">User Name</div>
+                                                <div class="desk">{{ i.username }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Email</div>
+                                                <div class="desk">{{ i.email }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Name</div>
+                                                <div class="desk">{{ i.name }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Last Name</div>
+                                                <div class="desk">{{ i.lastname }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Phone Number</div>
+                                                <div class="desk">{{ i.phonenumber }}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="panel">
+
+
+                                </div>
+                                <a class="btn btn-danger btn-xs btn-block" href="{{ path('ween_friend_delete',{'id':i.id }) }}">Remove from the list</a>
+                                <a class="btn btn-danger btn-xs btn-block" href="{{ path('ween_report_reportUser',{'id':i.id }) }}">Report {{ i.username }}</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="profile-desk">
+
+                                            <h1>{{ i.username }}</h1>
+
+                                            <span class="designation">Email: {{ i.email }}</span>
+                                            <p>
+                                                I love Travelling <3
+                                            </p>
+
+                                        </div>
+                                        {{ socialButtons() }}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--body wrapper end-->
+
+            <!--footer section start-->
+            <footer class="">
+                2016 &copy; Ween by Dimond-Dev
+            </footer>
+            <!--footer section end-->
+
+
+        </div>
+        <!-- main content end-->
+    </section>
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/ion.rangeSlider-1.8.2/js/vendor/jquery-1.10.2.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery-ui-1.9.2.custom.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/modernizr.min.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/jquery.nicescroll.js') }}"></script>
+
+    <!--Sparkline Chart-->
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/sparkline/jquery.sparkline.js') }}"></script>
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/sparkline/sparkline-init.js') }}"></script>
+
+    <!--google map-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>
+
+
+    <!--common scripts for all pages-->
+    <script src="{{ asset('bundles/myappesprit/AdminTemplate/js/scripts.js') }}"></script>
+
+    <script>
+
+        //google map
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(-37.815207, 144.963937);
+            var mapOptions = {
+                zoom: 15,
+                scrollwheel: false,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: 'Hello World!'
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+    </body>
+    </html>
+                                            {% endfor %}
+
+    {% endblock %}

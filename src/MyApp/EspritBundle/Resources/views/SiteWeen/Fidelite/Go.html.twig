@@ -1,0 +1,170 @@
+{% extends '@MyAppEsprit/views/templatevide.html.twig' %}
+{% block liste %}
+<html>
+<head>
+    <link rel="stylesheet" href="{{ asset('bundles/myappesprit/compiled/flipclock.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ asset('bundles/myappesprit/compiled/flipclock.js') }}"></script>
+    <link href="{{ asset('bundles/myappesprit/AdminTemplate/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/myappesprit/AdminTemplate/css/style-responsive.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bundles/myappesprit/AdminTemplate/css/owl.carousel.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/myappesprit/AdminTemplate/css/owl.theme.css') }}" type="text/css">
+
+</head>
+<body>
+    <div class="clock" style="margin:2em;" align="center"></div>
+    <div class="message"></div>
+
+
+<script type="text/javascript">
+    var clock;
+
+    $(document).ready(function() {
+        var clock;
+
+        clock = $('.clock').FlipClock({
+            clockFace: 'DailyCounter',
+            autoStart: false,
+            callbacks: {
+                stop: function() {
+                    $('.message').html('The clock has stopped!')
+                    $('.clock').hide()
+                    $('#fid').hide()
+                }
+            }
+        });
+
+        clock.setTime(10);
+        clock.setCountdown(true);
+
+        clock.start();
+
+    });
+</script>
+
+
+<div id="fid">
+
+
+{% for i in fidelites %}
+<div class="col-md-4" >
+    <div class="panel widget-info-one">
+        <div class="avatar-img">
+            <img src="{{ asset('bundles/myappesprit/AdminTemplate/images/blog/c3.png') }}" alt=""/>
+        </div>
+        <div class="inner">
+            <h5>Trip number 1<br></h5>
+            <span class="subtitle">
+                                Trip Program number :{{ i.trip1id.idtripprogram }}<br>
+                                Passenger number :{{ i.trip1id.nbrpassenger }}<br>
+                            </span>
+        </div>
+        <div class="panel-footer">
+            <ul class="post-view">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    {{ i.trip1id.description }}
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                    {{ i.trip1id.price }} DT
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-heart"></i>
+                    </a>
+                    {{ i.trip1id.rating }} Etoiles
+                </li>
+            </ul>
+
+            <button class="btn btn-warning btn-block" type="button">Reserver</button>        </div>
+
+    </div>
+</div>
+
+
+    <div class="col-md-4">
+        <div class="panel widget-info-one">
+            <div class="avatar-img">
+                <img src="{{ asset('bundles/myappesprit/AdminTemplate/images/blog/c3.png') }}" alt=""/>
+            </div>
+            <div class="inner">
+                <h5>Trip number 2<br></h5>
+                <span class="subtitle">
+                                Trip Program number :{{ i.trip2id.idtripprogram }}<br>
+                    Passenger number{{ i.trip2id.nbrpassenger }}<br>
+                            </span>
+            </div>
+            <div class="panel-footer">
+                <ul class="post-view">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        {{ i.trip2id.description }}
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-comment"></i>
+                        </a>
+                        {{ i.trip2id.price }} DT
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-heart"></i>
+                        </a>
+                        {{ i.trip2id.rating }} Etoiles
+                    </li>
+                </ul>
+                <button class="btn btn-warning btn-block" type="button">Reserver</button>              </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="panel widget-info-one">
+            <div class="avatar-img">
+                <img src="{{ asset('bundles/myappesprit/AdminTemplate/images/blog/c3.png') }}" alt=""/>
+            </div>
+            <div class="inner">
+                <h5>Trip number 3<br></h5>
+                <span class="subtitle">
+                               Trip Program number : {{ i.trip3id.idtripprogram }}<br>
+                   Passenger number : {{ i.trip3id.nbrpassenger }}<br>
+                            </span>
+            </div>
+            <div class="panel-footer">
+                <ul class="post-view">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        {{ i.trip3id.description }}
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-comment"></i>
+                        </a>
+                        {{ i.trip3id.price }} DT
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-heart"></i>
+                        </a>
+                        {{ i.trip3id.rating }} Etoiles
+                    </li>
+                </ul>
+                <button class="btn btn-warning btn-block" type="button">Reserver</button>              </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+    </div>
+</body>
+</html>
+{% endblock %}

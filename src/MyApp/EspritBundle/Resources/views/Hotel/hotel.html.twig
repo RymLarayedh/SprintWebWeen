@@ -1,0 +1,36 @@
+{% extends '@MyAppEsprit/views/templateAdmin.html.twig' %}
+{% block reporttable %}
+<h1>Liste Des Hotels</h1>
+<table>
+    <tr>
+
+        <td>Name</td>
+        <td>Stars</td>
+        <td>rating</td>
+        <td>longitude</td>
+        <td>Latitude</td>
+        <td>pricebynight</td>
+        <td>idaddress</td>
+    </tr>
+
+
+    {% for h in hot %}
+        <tr>
+
+            <td>{{ h.name }}</td>
+            <td>{{ h.stars }}</td>
+            <td>{{ h.rating }}</td>
+            <td>{{ h.longitude }}</td>
+            <td>{{ h.latitude }}</td>
+            <td>{{ h.pricebynight }}</td>
+            <td>{{ h.isaddress }}</td>
+            <td><a href="afficher2" target="_blank">Acceder</a></td>
+            <td><a href="{{ path('esprit_Voiture_afficher2',{'Id':v.Id,'Serie':v.Serie,'DateMiseCirculation':v.DateMiseCirculation,'Marque':v.Marque}) }}">Acceder</a></td>
+
+        </tr>
+    {% endfor %}
+
+
+
+</table>
+{% endblock %}
